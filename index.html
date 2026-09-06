@@ -4,25 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Milton & Lomax — Éditeur de logiciels</title>
-<meta name="description" content="Milton & Lomax, société française d'édition de logiciels. Éditeur de JustQuo, l'analyse indépendante des devis de travaux.">
+<meta name="description" content="Milton & Lomax, société française d'édition de logiciels. Éditeur de JustQuo (analyse indépendante des devis de travaux, particuliers, professionnels et collectivités) et de Reliade (toutes les démarches après un décès, réunies au même endroit).">
 <style>
-  :root { --navy:#0c3c78; --blue:#1560b0; --gold:#ffc94d; --ink:#1c2733; --muted:#5d6b7a; }
+  :root { --navy:#0c3c78; --blue:#1560b0; --gold:#ffc94d; --ink:#1c2733; --muted:#5d6b7a; --line:#dde5ef; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'Helvetica Neue',Arial,sans-serif; color:var(--ink); line-height:1.6; }
   header { background:linear-gradient(130deg,var(--navy),var(--blue)); color:#fff; padding:88px 24px 72px; text-align:center; }
   .logo { font-size:34px; font-weight:700; letter-spacing:4px; }
   .logo span { color:var(--gold); }
   .tagline { margin-top:14px; font-size:19px; opacity:.92; font-weight:300; }
-  main { max-width:880px; margin:0 auto; padding:56px 24px; }
+  main { max-width:960px; margin:0 auto; padding:56px 24px; }
   h2 { color:var(--navy); font-size:24px; margin:36px 0 12px; }
   p { margin-bottom:14px; color:var(--ink); }
-  .card { background:#f2f6fb; border-left:4px solid var(--blue); border-radius:6px; padding:22px 24px; margin:18px 0; }
-  .card h3 { color:var(--navy); margin-bottom:6px; }
+  .products { display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:6px; }
+  .product { background:#f7f9fc; border:1px solid var(--line); border-top:5px solid var(--blue); border-radius:10px; padding:26px; display:flex; flex-direction:column; }
+  .product.reliade { border-top-color:#F2A65A; }
+  .product .brand { display:flex; align-items:center; gap:14px; margin-bottom:12px; min-height:56px; }
+  .product .brand img { height:46px; width:auto; }
+  .product .brand img.round { height:56px; }
+  .product h3 { color:var(--navy); font-size:22px; }
+  .product .who { font-size:13px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em; margin-bottom:8px; }
+  .product p { font-size:15px; flex:1; }
+  .links { display:flex; flex-wrap:wrap; gap:8px; margin-top:8px; }
+  .cta { display:inline-block; background:var(--gold); color:var(--navy); font-weight:600; padding:10px 18px; border-radius:6px; font-size:14px; }
+  .cta.sec { background:#fff; border:1.5px solid var(--blue); color:var(--blue); }
+  .product.reliade .cta { background:#F2A65A; color:#2b1d0a; }
+  .product.reliade .cta.sec { background:#fff; border-color:#1F3A63; color:#1F3A63; }
   a { color:var(--blue); text-decoration:none; }
   a:hover { text-decoration:underline; }
+  .cta:hover { text-decoration:none; filter:brightness(.95); }
   footer { background:#0e1826; color:#9fb2c8; text-align:center; padding:28px 24px; font-size:13.5px; margin-top:56px; }
   footer .legal { margin-top:8px; font-size:12px; color:#7186a0; }
-  .cta { display:inline-block; margin-top:18px; background:var(--gold); color:var(--navy); font-weight:600; padding:11px 22px; border-radius:6px; }
+  @media (max-width:760px){ .products { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -32,13 +45,24 @@
 </header>
 <main>
   <h2>Qui sommes-nous</h2>
-  <p>Milton &amp; Lomax est une société par actions simplifiée de droit français, fondée en 2026 et établie à Paris. Née de la rencontre entre la rigueur juridique et la connaissance concrète du terrain, elle conçoit des logiciels qui apportent transparence et confiance dans des secteurs qui en manquent.</p>
+  <p>Milton &amp; Lomax est une société par actions simplifiée de droit français, fondée en 2026 et établie à Paris. Née de la rencontre entre la rigueur juridique et la connaissance concrète du terrain, elle conçoit des logiciels qui apportent transparence et confiance dans des moments et des secteurs qui en manquent.</p>
 
-  <h2>Nos produits</h2>
-  <div class="card">
-    <h3>JustQuo</h3>
-    <p>L'analyse indépendante des devis de travaux. JustQuo décompose chaque devis ligne à ligne, compare les prix à des dizaines de milliers de références du bâtiment, estime la main-d'œuvre et les marges, vérifie la fiabilité de l'entreprise sur les bases publiques officielles et produit des rapports clairs — pour les particuliers comme pour les acheteurs professionnels et publics.</p>
-    <a class="cta" href="https://justquo.com">Découvrir JustQuo</a>
+  <h2>Nos applications</h2>
+  <div class="products">
+    <div class="product">
+      <div class="brand"><img src="img/justquo-logo.png" alt="JustQuo"></div>
+      <div class="who">Particuliers · professionnels · collectivités</div>
+      <h3>JustQuo</h3>
+      <p>L'analyse indépendante des devis de travaux. JustQuo décompose chaque devis ligne à ligne, compare les prix à plus de 40 000 références du bâtiment, estime la main-d'œuvre et les marges, vérifie la fiabilité de l'entreprise sur les bases publiques officielles et produit des rapports clairs. Pour les collectivités : signalements citoyens, programmation des lots, prix juste avant appel d'offres et rapport de diligence scellé.</p>
+      <div class="links"><a class="cta" href="https://justquo.com/ui/">Ouvrir JustQuo</a><a class="cta sec" href="https://justquo.com/collectivites/">JustQuo Collectivités</a></div>
+    </div>
+    <div class="product reliade">
+      <div class="brand"><img class="round" src="img/reliade-logo.png" alt="Reliade"></div>
+      <div class="who">Familles · notaires · pompes funèbres</div>
+      <h3>Reliade</h3>
+      <p>Toutes les démarches après un décès, réunies au même endroit. Reliade guide les proches dans les 29 démarches qui suivent la perte d'un être cher : délais comptés depuis la date du décès, documents à préparer, contacts utiles et courriers PDF déjà rédigés. Gratuit et sans inscription pour les familles ; un espace professionnel pour les notaires, les pompes funèbres et les accompagnants.</p>
+      <div class="links"><a class="cta" href="https://reliade.fr/">Découvrir Reliade</a><a class="cta sec" href="https://app.reliade.fr/">Ouvrir l'application</a></div>
+    </div>
   </div>
 
   <h2>Contact</h2>
@@ -46,7 +70,7 @@
   <a href="mailto:cedric@miltonlomax.com">cedric@miltonlomax.com</a></p>
 </main>
 <footer>
-  <div>© 2026 Milton &amp; Lomax — Tous droits réservés</div>
+  <div>© 2026 Milton &amp; Lomax — Tous droits réservés. JustQuo et RELIADE sont des marques déposées.</div>
   <div class="legal">MILTON &amp; LOMAX, société par actions simplifiée au capital de 1 000 €, immatriculée au RCS de Paris sous le n° 106 927 882, siège social 67 rue Saint-Jacques 75005 Paris. Directeur de la publication : Cédric Frementain, Président. Hébergement : GitHub Pages (GitHub, Inc.).</div>
 </footer>
 </body>
